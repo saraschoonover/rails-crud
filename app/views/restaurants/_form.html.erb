@@ -1,9 +1,6 @@
-<%= form_for restaurant do |f| %>
-  <%= f.label :name %><br />
-  <%= f.text_field :name %><br />
-  <%= f.label :address %><br />
-  <%= f.text_field :address %><br />
-  <%= f.label :rating %><br />
-  <%= f.number_field :rating %><br />
+<%= simple_form_for(restaurant) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :rating %>
   <%= f.submit %>
 <% end %>
