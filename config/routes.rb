@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get "/restaurants/:id/edit", to: "restaurants#edit", as: :edit
   patch "/restaurants/:id", to: "restaurants#update"
   delete "/restaurants/:id", to: "restaurants#destroy"
+  # resources :restaurants
 end
