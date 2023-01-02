@@ -1,11 +1,14 @@
 class RestaurantsController < ApplicationController
-  # before_action :set_restaurants, only: %i[show edit update destroy chef]
+  before_action :set_restaurants, only: %i[show edit update destroy chef]
+  def home
+  end
+  
   def index
     @restaurants = Restaurant.all
   end
 
   def show
-     set_restaurants
+    set_restaurants
   end
 
   def new
@@ -41,6 +44,13 @@ class RestaurantsController < ApplicationController
   def chef
     set_restaurants
     @chef_name = @restaurant.chef_name
+  end
+
+  def random
+
+    @restaurant = Restaurant.all.sample
+
+
   end
 
   private

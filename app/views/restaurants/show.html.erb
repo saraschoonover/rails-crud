@@ -1,11 +1,27 @@
-<div class="container">
-  <h1>restaurants: <%=@restaurant.name %></h1>
+<div class="banner">
+  <h1 class="show-name"><%=@restaurant.name %></h1>
 
-
-  <p>Rating:  <%= "⭐️" * @restaurant.rating %></p>
-  <p>Located in: <%= @restaurant.address %></p>
+  <p class="show-p">Rating:  <%= "⭐️" * @restaurant.rating %></p>
+  <p class="show-p">Located in: <%= @restaurant.address %></p>
 
   <%= link_to "Link to see Chef", chef_restaurant_path(@restaurant) %>
+
+  <p class="show-p"><strong>Reviews</strong></p>
+  <p><%= link_to "Add Review", new_restaurant_review_path(@restaurant) %></p>
+  <ul class="list-group">
+    <% @restaurant.reviews.each do |review| %>
+      <li class="list-group-item">
+        <%= review.content %>
+        <%= link_to "Delete",
+          review_path(review),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+        %>
+        </li>
+
+    <% end %>
+  </ul>
+  <hr>
+
   <%= link_to "Back to restaurants", restaurants_path %>
   <%= link_to "Edit", edit_restaurant_path %>
   <%= link_to "Delete",

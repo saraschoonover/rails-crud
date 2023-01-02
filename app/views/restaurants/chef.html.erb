@@ -1,5 +1,6 @@
-<h1><%= @restaurant.name %>'s Chef is:</h1>
-<h3><%= @chef_name %></h3>
+<div class="container pt-5">
+  <h1><%= @restaurant.name %>'s Chef is:</h1>
+  <h3><%= @chef_name %></h3>
 
-<%= link_to "Back to Restaurant", restaurant_path(@restaurant) %>
-<hr>
+  <%= link_to "Back to Restaurant", restaurant_path(@restaurant) %>
+</div>

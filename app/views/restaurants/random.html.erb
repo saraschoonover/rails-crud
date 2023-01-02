@@ -1,0 +1,11 @@
+
+
+  <div class="container">
+  <h1>Try this one!</h1>
+  <h2><%=@restaurant.name %></h2>
+
+  <p>Rating:  <%= "⭐️" * @restaurant.rating %></p>
+  <p>Located in: <%= @restaurant.address %></p>
+  <%= link_to "Back to home page", restaurants_path  %>
+
+  </div>
